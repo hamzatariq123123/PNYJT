@@ -1,4 +1,4 @@
-package com.pnytrainings.pnyjt1;
+package com.pnytrainings.pnyjt1.activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.pnytrainings.pnyjt1.MyReciever;
+import com.pnytrainings.pnyjt1.MyWorker;
+import com.pnytrainings.pnyjt1.R;
 
 import org.w3c.dom.Text;
 

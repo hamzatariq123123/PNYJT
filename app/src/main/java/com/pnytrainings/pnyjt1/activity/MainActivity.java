@@ -1,4 +1,4 @@
-package com.pnytrainings.pnyjt1;
+package com.pnytrainings.pnyjt1.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.pnytrainings.pnyjt1.R;
 
 public class MainActivity extends AppCompatActivity {
 

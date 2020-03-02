@@ -1,4 +1,4 @@
-package com.pnytrainings.pnyjt1;
+package com.pnytrainings.pnyjt1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.pnytrainings.pnyjt1.R;
 
 public class SecondActivity extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="400dp"
     android:background="@color/red"
-    tools:context=".FirstFragment">
+    tools:context=".fargment.FirstFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

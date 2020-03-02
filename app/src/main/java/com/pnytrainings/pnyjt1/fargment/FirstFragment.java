@@ -1,6 +1,5 @@
-package com.pnytrainings.pnyjt1;
+package com.pnytrainings.pnyjt1.fargment;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.pnytrainings.pnyjt1.R;
 
 public class FirstFragment extends Fragment {
 

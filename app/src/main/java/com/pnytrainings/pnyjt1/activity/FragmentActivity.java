@@ -1,10 +1,11 @@
-package com.pnytrainings.pnyjt1;
+package com.pnytrainings.pnyjt1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+
+import com.pnytrainings.pnyjt1.fargment.FirstFragment;
+import com.pnytrainings.pnyjt1.R;
 
 public class FragmentActivity extends AppCompatActivity {
 

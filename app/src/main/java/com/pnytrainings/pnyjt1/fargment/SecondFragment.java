@@ -1,4 +1,4 @@
-package com.pnytrainings.pnyjt1;
+package com.pnytrainings.pnyjt1.fargment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.pnytrainings.pnyjt1.R;
 
 
 public class SecondFragment extends Fragment {
