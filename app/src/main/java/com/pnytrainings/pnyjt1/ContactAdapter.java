@@ -12,16 +12,19 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.pnytrainings.pnyjt1.activity.DataBaseActivity;
 import com.pnytrainings.pnyjt1.model.Contact;
+import com.pnytrainings.pnyjt1.model.db.ContactEntity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.contactViewHolder> {
 
     Activity activity;
-    ArrayList<Contact> contacts;
+    List<ContactEntity> contacts;
 
-    public ContactAdapter(Activity activity, ArrayList<Contact> contacts) {
+    public ContactAdapter(Activity activity, List<ContactEntity> contacts) {
         this.activity = activity;
         this.contacts = contacts;
     }
@@ -48,16 +51,19 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.contactV
     @Override
     public void onBindViewHolder(@NonNull contactViewHolder holder, final int position) {
 
-        final Contact contact = contacts.get(position);
+        final ContactEntity contact = contacts.get(position);
 
         holder.userName.setText(contact.getName());
-        holder.userContact.setText(contact.getNumber());
-        holder.profilePic.setImageResource(contact.getImage());
+        holder.userContact.setText(contact.getContactNumber());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, contact.getName()+" at position "+ position, Toast.LENGTH_SHORT).show();
+                MyDataBase.getAppDatabase(activity).contactDao()
+                        .deleteContact(getContactwihID(contact.getId()));
+                contacts =   MyDataBase.getAppDatabase(activity).contactDao()
+                        .getAll();
+                notifyDataSetChanged();
             }
         });
 
@@ -90,5 +96,16 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.contactV
             userName = itemView.findViewById(R.id.userName);
             userContact = itemView.findViewById(R.id.userContact);
         }
+    }
+
+
+    public ContactEntity getContactwihID(int pos){
+
+        ContactEntity contactEntity = new ContactEntity();
+        contactEntity.setId(pos);
+        contactEntity.setName("edit");
+        contactEntity.setContactNumber("edit number 12321");
+
+        return contactEntity;
     }
 }

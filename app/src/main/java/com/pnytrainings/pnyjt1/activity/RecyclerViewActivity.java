@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.pnytrainings.pnyjt1.ContactAdapter;
+import com.pnytrainings.pnyjt1.MyDataBase;
 import com.pnytrainings.pnyjt1.R;
 import com.pnytrainings.pnyjt1.model.Contact;
+import com.pnytrainings.pnyjt1.model.db.ContactEntity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
@@ -21,6 +24,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     ContactAdapter contactAdapter;
 
+    List<ContactEntity> contactEntities;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +34,12 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         contactsRV = findViewById(R.id.contactsRV);
 
-        populateDataa();
+        contactEntities =  MyDataBase.getAppDatabase(RecyclerViewActivity.this).contactDao()
+                .getAll();
 
-        contactAdapter = new ContactAdapter(RecyclerViewActivity.this,contacts);
+        contactAdapter = new ContactAdapter(RecyclerViewActivity.this,contactEntities);
 
-        contactsRV.setLayoutManager(new GridLayoutManager(this,2));
+        contactsRV.setLayoutManager(new LinearLayoutManager(this));
         contactsRV.setAdapter(contactAdapter);
 
     }
